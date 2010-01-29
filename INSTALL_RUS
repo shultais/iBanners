@@ -1,0 +1,14 @@
+Установка в Linux
+
+1. Скопируйте каталог с приложением в корень вашего проекта
+2. Добавьте 'iBanners' в INSTALLED_APPS в файле setting.py
+3. Выполните python manage.py syncdb
+4. Добавьте в главный urls.py строку:
+   urlpatterns += patterns('iBanners.views', url(regex=r'^ibas/(?P<banner_id>\d+)/$', view='banner', name='ibanners.banner'))
+5. Создайте символическую ссылку на iBanners/ibanners_tags.py в каталоге templatetags приложения, к которому нужно подключить баннерную систему.
+   app/
+      templatetags/
+	__init__.py
+        ibanners_tags.py
+
+Всё установлено. Как использовать читайте в README_RUS
